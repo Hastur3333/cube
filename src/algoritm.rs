@@ -1,5 +1,5 @@
 /// Pretty self explanatory, but it describes the type of move.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum MoveType {
     Normal,
     Prime,
@@ -7,7 +7,7 @@ pub enum MoveType {
 }
 
 /// Describes which side should be moves.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Side {
     Up,
     Down,
@@ -18,7 +18,7 @@ pub enum Side {
 }
 
 /// Describes a move, both by [`MoveType`] and [`Side`].
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Move {
     pub side: Side,
     pub ty: MoveType,
@@ -52,7 +52,7 @@ impl Move {
 }
 
 /// A set of moves, executed in sequence.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Algorithm {
     pub moves: Vec<Move>,
 }

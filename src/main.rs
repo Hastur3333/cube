@@ -1,6 +1,8 @@
 pub mod algoritm;
 pub mod parse;
 
+use algoritm::*;
+
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 enum Colour {
     Green,
@@ -259,6 +261,47 @@ impl Cube {
         self.left.set_upper_line(back_upper_line);
         self.back.set_upper_line(right_upper_line);
         self.right.set_upper_line(front_upper_line);
+    }
+
+    pub fn execute_move(&mut self, mv: Move) {
+        match &mv.side {
+            Side::Up => match &mv.ty {
+                MoveType::Normal => self.turn_up(),
+                MoveType::Prime => self.turn_up_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+            Side::Down => match mv.ty {
+                MoveType::Normal => self.turn_down(),
+                MoveType::Prime => self.turn_down_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+            Side::Right => match mv.ty {
+                MoveType::Normal => self.turn_right(),
+                MoveType::Prime => self.turn_right_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+            Side::Left => match mv.ty {
+                MoveType::Normal => self.turn_left(),
+                MoveType::Prime => self.turn_left_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+            Side::Front => match mv.ty {
+                MoveType::Normal => self.turn_front(),
+                MoveType::Prime => self.turn_front_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+            Side::Back => match mv.ty {
+                MoveType::Normal => self.turn_back(),
+                MoveType::Prime => self.turn_back_prime(),
+                MoveType::Double => unimplemented!(),
+            },
+        }
+    }
+
+    pub fn execute_algorithm(&mut self, alg: Algorithm) {
+        for mv in alg.moves {
+            self.execute_move(mv);
+        }
     }
 }
 
