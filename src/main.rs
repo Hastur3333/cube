@@ -1,5 +1,4 @@
 pub mod algoritm;
-pub mod parse;
 
 use algoritm::*;
 
