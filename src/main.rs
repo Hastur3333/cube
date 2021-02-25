@@ -142,10 +142,21 @@ impl Cube {
         let up_right_line: Line = self.up.get_right_line();
         let back_left_line: Line = self.back.get_left_line();
         let down_left_line: Line = self.down.get_left_line();
-        self.down.set_right_line(front_right_line);
-        self.front.set_left_line(up_right_line);
-        self.up.set_left_line(back_left_line);
+        self.down.set_left_line(front_right_line);
+        self.front.set_right_line(up_right_line);
+        self.up.set_right_line(back_left_line);
         self.back.set_right_line(down_left_line);
+    }
+    pub fn turn_right_twice(&mut self) {
+        self.right.rot_clockwise();
+        let front_right_line: Line = self.front.get_right_line();
+        let up_right_line: Line = self.up.get_right_line();
+        let back_left_line: Line = self.back.get_left_line();
+        let down_left_line: Line = self.down.get_left_line();
+        self.back.set_left_line(front_right_line);
+        self.down.set_left_line(up_right_line);
+        self.front.set_right_line(back_left_line);
+        self.up.set_right_line(down_left_line);
     }
     pub fn turn_front(&mut self) {
         self.front.rot_clockwise();
