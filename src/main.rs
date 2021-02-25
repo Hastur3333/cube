@@ -1,3 +1,6 @@
+pub mod algoritm;
+pub mod parse;
+
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 enum Colour {
     Green,
