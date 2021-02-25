@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["cube"] = [{"text":"impl PartialEq&lt;Colour&gt; for Colour","synthetic":false,"types":[]},{"text":"impl PartialEq&lt;Face&gt; for Face","synthetic":false,"types":[]},{"text":"impl PartialEq&lt;Line&gt; for Line","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Colour",""]],"fn":[["main",""]],"struct":[["Face",""],["Line","Ordering of contents of lines are in clockwise order"]]});
